@@ -21,7 +21,8 @@ def get_all_links(category_links, driver):
     return res
 
 
-PATH = "C:\Program Files (x86)\chromedriver.exe"
+# PATH = "C:\Program Files (x86)\chromedriver.exe"
+PATH = "/home/user/scrap/scraping/chromedriver"
 driver = webdriver.Chrome(PATH)
 courses = []
 
