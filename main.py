@@ -66,9 +66,6 @@ def create_course_obj(link, driver):
     # print(text)
     return Course(title, short_desc, text, price, sources, link)
 
-
-
-
 # PATH = "C:\Program Files (x86)\chromedriver.exe"
 PATH = "/home/user/scrap/scraping/chromedriver"
 driver = webdriver.Chrome(PATH)
