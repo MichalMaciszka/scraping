@@ -1,10 +1,10 @@
 class Course:
-    def __init__(self, title, short_description, full_description, price, image, url):
+    def __init__(self, title, short_description, full_description, price, image_list, url):
         self.title = title
         self.short_description = short_description
         self.full_description = full_description
         self.price = price
-        self.image = image
+        self.images = image_list.copy()
         self.url = url
         self.category = None
 
@@ -17,6 +17,6 @@ class Course:
         result['short_description'] = self.short_description
         result['full_description'] = self.full_description
         result['price'] = self.price
-        result['image'] = self.image
+        result['images'] = self.images
         result['url'] = self.url
         return result
