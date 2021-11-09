@@ -48,6 +48,8 @@ def create_course_obj(link, driver, id):
     n_flag = False
     if img_container is None:
         img = soup.find('img', {'class': 'zoomImg'})
+        if img is None:
+            img = soup.find('img', {'role': 'presentation'})
         imgs.append(img['src'])
         n_flag = True
     else:
@@ -62,7 +64,7 @@ def create_course_obj(link, driver, id):
             p += ext
             sources.append(p)
         else:
-            sources.append(i[0])
+            sources.append(i)
     description_container = soup.find('div', {'id': "tab-description"})
     text = ""
     if description_container is not None:
@@ -77,8 +79,8 @@ def create_course_obj(link, driver, id):
     return ret
 
 
-PATH = "C:\Program Files (x86)\chromedriver.exe"
-# PATH = "/home/user/scrap/scraping/chromedriver"
+# PATH = "C:\Program Files (x86)\chromedriver.exe"
+PATH = "/home/user/scrap/scraping/chromedriver"
 driver = webdriver.Chrome(PATH)
 courses = []
 
